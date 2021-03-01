@@ -36,6 +36,8 @@ OPTIONS:
         --stack <stack-size>                 In bytes [default: 2048]
         --supported-boards <supported-boards>
                                              Comma separated list of boards this app is compatible with
+        --tock-kernel-version <tock-kernel-version>
+                                             Major version number of Tock kernel this app expects
 
 ARGS:
     <elf>...    application file(s) to package

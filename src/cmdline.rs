@@ -95,6 +95,13 @@ pub struct Opt {
         help = "comma separated list of boards this app is compatible with"
     )]
     pub supported_boards: Option<String>,
+
+    #[structopt(
+        long = "tock-kernel-version",
+        name = "tock-kernel-version",
+        help = "major version number of Tock kernel this app expects"
+    )]
+    pub tock_kernel_version: Option<String>,
 }
 
 mod test {

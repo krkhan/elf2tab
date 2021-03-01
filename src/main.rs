@@ -36,6 +36,15 @@ fn main() {
         )
         .unwrap();
     });
+    // Include "tock-kernel-version" key if a necessary version was specified.
+    opt.tock_kernel_version.as_ref().map(|tock_kernel_version| {
+        writeln!(
+            &mut metadata_toml,
+            "tock-kernel-version = \"{}\"",
+            tock_kernel_version.as_str()
+        )
+        .unwrap();
+    });
     // Add build-date metadata unless a deterministic build is desired.
     if !opt.deterministic {
         let build_date = chrono::Utc::now().to_rfc3339_opts(chrono::SecondsFormat::Secs, true);
